@@ -1,0 +1,80 @@
+.mainimg{
+    width: 100%;
+    height: 350px;
+}
+
+.item{
+    color: #fff;
+}
+
+.avatar{
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+    background: yellow;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.profilePhoto{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePhoto img{
+    width: 100%;
+}
+
+.info{
+    line-height: 10px;
+}
+
+.info p{
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+}
+.info p span{
+    margin-left: 20px;
+    color: blue;
+}
+
+.statusInput{
+    margin-top: 30px;
+    appearance: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background: yellow;
+    color: purple;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    height: 100px;
+    text-decoration: none;
+    width: 110px;
+    resize: none;
+    height: 50px;
+}
+
+.statusInput:focus{
+    background: #ffffff;
+}
+.statusText{
+    color: purple;
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: 700;
+}

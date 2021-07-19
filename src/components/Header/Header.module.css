@@ -1,0 +1,27 @@
+.header {
+    grid-area: h;
+    background-color: lightgreen;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img{
+    width: 40px;
+}
+
+.loginBlock a{
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #000000;
+    color: #000000;
+    text-decoration: none;    
+    transition: .5s;
+    cursor: pointer;
+}
+
+.loginBlock a:hover{
+    color: #ffffff;
+    background: #000000;
+}

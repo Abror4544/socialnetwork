@@ -1,0 +1,106 @@
+::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px; 
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px grey;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3e4a70;
+    border-radius: 10px;
+}
+
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 20px;
+}
+
+.dialogs .dialog {
+    padding: 15px;
+}
+
+.dialogsItems {
+    background: yellow;
+    height: 100%;
+    color: grey;
+}
+
+.dialogsItems .active {
+    color: blue;
+    font-weight: 900;
+}
+
+.dialogsItems .active::after {
+    content: "<";
+}
+
+.dialog {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog a {
+    text-decoration: none;
+}
+
+.dialog img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.messagesBlock {
+    background: grey;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 440px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.messagesBlock .message {
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px;
+    background: burlywood;
+}
+
+.messagesBlock .message:last-child {
+    margin-bottom: auto;    
+}
+
+.messages {
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.typing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.typingArea {
+    width: 600px;
+    height: 30px;
+    justify-self: flex-end;
+    margin-top: 20px;
+    resize: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    outline: none;
+}

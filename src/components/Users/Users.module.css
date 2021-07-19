@@ -1,0 +1,68 @@
+::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px; 
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px grey;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3e4a70;
+    border-radius: 10px;
+}
+
+.userContainer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #00000099;
+    padding: 20px;
+}
+
+.userContainer:first-child{
+    margin-top: 30px;
+}
+
+.avatarBlock{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.userInfoBlock{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+h4,p{
+    color: #ffffff;
+}
+
+
+.loader{
+    position: absolute;
+    left: 50%;
+}
+
+
