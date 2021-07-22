@@ -17,7 +17,7 @@ let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portio
   return (
     <div className={s.pagination}>
       {portionNumber > 1 &&
-        <a className={s.movePaginator} onClick={() => { setPortionNumber(portionNumber - 1) }} href="#/">←</a>}
+        <a className={s.movePaginator} onClick={() => { setPortionNumber(portionNumber - 1) }}>←</a>}
       {pages
         .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
         .map((p) => {
@@ -29,7 +29,7 @@ let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portio
           );
         })}
       {portionCount > portionNumber &&
-        <a className={s.movePaginator} href="#/" onClick={() => { setPortionNumber(portionNumber + 1) }}>→</a>}
+        <a className={s.movePaginator} onClick={() => { setPortionNumber(portionNumber + 1) }}>→</a>}
     </div>
   );
 };

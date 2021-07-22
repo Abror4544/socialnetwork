@@ -29,6 +29,7 @@
     border-radius: 50%;
     text-transform: uppercase;
     transition: .5s;
+    cursor: pointer;
 }
 
 .movePaginator:hover{

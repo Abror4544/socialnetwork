@@ -9,14 +9,23 @@ const ProfileInfo = (props) => {
         return <Preloader />
     }
 
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            props.savePhoto(e.target.files[0])
+        }
+    }
+
     return (
         <div>
             <div className={s.avatar}>
                 <div className={s.main}>
                     <div className={s.profilePhoto}>
-                        <img src={props.profile.photos.large != null ? props.photos.large : userPhoto} alt="" />
-                        <img src={props.profile.photos.large} />
+                        <img src={props.profile.photos.large || userPhoto} alt="" />
+                        {props.isOwner && <label htmlFor="file-upload" className={s.chooseFile}>
+                            Change ava
+                        </label>}
                     </div>
+                    <input className={s.chooseBase} onChange={onMainPhotoSelected} id={"file-upload"} type="file" />
                     <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
                 </div>
                 <div className={s.info}>
