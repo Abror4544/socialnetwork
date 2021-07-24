@@ -1,3 +1,7 @@
+*{
+    outline-style: none;
+}
+
 .appWrapper {
     display: grid;
     margin: 0 auto;
@@ -7,12 +11,13 @@
             "n c";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
-    /*grid-gap: 10px;*/
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 .appWrapperContent {
     grid-area: c;
-    background-color: fuchsia;
+    background-color: black;
 }
 
 

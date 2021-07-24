@@ -41,9 +41,6 @@ export const createField = (
 ) => (
   <div>
     <Field
-      autoComplete="off"
-      autoCorrect="off"
-      spellCheck="off"
       name={name}
       component={component}
       validate={validators}

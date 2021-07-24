@@ -38,7 +38,6 @@ const Dialogs = (props) => {
     </div>
   );
 };
-
 const maxLength89 = maxLengthCreator(89)
 
 const AddMessageForm = (props) => {
@@ -48,7 +47,7 @@ const AddMessageForm = (props) => {
         <Field component={Textarea} validate={[required, maxLength89]} className={s.typingArea} name="newMessageBody" placeholder="Type here..." />
       </div>
       <div>
-        <button accessKey="a" className={s.sendBtn}>Send</button>
+        <button onClick={() => { document.querySelector(`.${s.messages}`).scrollTo(0, 9999999); }} accessKey="a" className={s.sendBtn}>Send☝</button>
       </div>
     </form>
   )

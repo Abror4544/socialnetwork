@@ -67,4 +67,8 @@ export const API = {
       },
     });
   },
+
+  saveProfile(profile) {
+    return instance.put(`profile`, profile);
+  },
 };

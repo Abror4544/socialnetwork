@@ -1,6 +1,6 @@
 ::-webkit-scrollbar {
-    width: 5px; 
-    height: 5px; 
+    width: 5px;
+    height: 5px;
     cursor: pointer;
 }
 
@@ -19,6 +19,10 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
     padding: 20px;
+    background-color: #0a0e0be0;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #174691;
+    margin: 20px 10px 10px 10px;
 }
 
 .dialogs .dialog {
@@ -26,13 +30,12 @@
 }
 
 .dialogsItems {
-    background: yellow;
     height: 100%;
     color: grey;
 }
 
 .dialogsItems .active {
-    color: blue;
+    color: greenyellow;
     font-weight: 900;
 }
 
@@ -57,7 +60,6 @@
 }
 
 .messagesBlock {
-    background: grey;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -68,21 +70,23 @@
 }
 
 .messagesBlock .message {
-    color: #ffffff;
+    color: red;
+    border: 1px solid red;
     padding: 10px;
     border-radius: 20px;
     margin: 5px;
-    background: burlywood;
+    background: #000;
+    display: table;
 }
 
 .messagesBlock .message:last-child {
-    margin-bottom: auto;    
+    margin-bottom: auto;
 }
 
 .messages {
     overflow-y: auto;
     width: 100%;
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
@@ -92,15 +96,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .typingArea {
     width: 600px;
     height: 30px;
     justify-self: flex-end;
-    margin-top: 20px;
     resize: none;
     border-radius: 20px;
     padding: 5px 10px;
     outline: none;
+    display: block;
+}
+
+.sendBtn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: red;
+    background-color: #000;
+    border: none;
+    box-shadow: 0 0 12px red;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+.sendBtn:hover{
+    background: red;
+    color: #000;
 }
