@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { reduxForm, Field } from "redux-form";
 import { maxLengthCreator, required } from "../../../support/validators";
 import { Textarea } from "../../common/FormsControls/FormsControls.js";
@@ -8,7 +8,7 @@ import Post from "./Post/Post";
 const MyPosts = React.memo((props) => {
 
   let postsElements = props.posts.map((p) => (
-    <Post message={p.post} likeCount={p.likesCount} />
+    <Post key={p.id} message={p.post} likeCount={p.likesCount} />
   ));
 
 

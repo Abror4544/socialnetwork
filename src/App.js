@@ -1,7 +1,13 @@
 import "./App.css";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Nav from "./components/Navbar/Nav";
-import { HashRouter, Route, withRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import Login from "./components/Login/Login";
 import React from "react";
@@ -21,8 +27,16 @@ const ProfileContainer = React.lazy(() =>
 );
 
 class App extends React.Component {
+  catchAllUnhandledErrors = (reason, promise) => {
+    console.error("Error!");
+  };
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
   }
 
   render() {
@@ -35,14 +49,26 @@ class App extends React.Component {
         <HeaderContainer />
         <Nav />
         <div className="appWrapperContent">
-          <Route
-            path="/dialogs"
-            render={withSuspense(DialogsContainer)}/>
-          <Route
-            path="/profile/:userId?"
-            render={withSuspense(ProfileContainer)}/>
-          <Route path="/users" render={() => <UsersContainer />} />
-          <Route path="/login" render={() => <Login />} />
+          <Switch>
+            <Route exact path="/" render={() => <Redirect to={"/profile"} />} />
+            <Route path="/dialogs" render={withSuspense(DialogsContainer)} />
+            <Route
+              path="/profile/:userId?"
+              render={withSuspense(ProfileContainer)}
+            />
+            <Route path="/users" render={() => <UsersContainer />} />
+            <Route path="/login" render={() => <Login />} />
+            <Route
+              path="*"
+              render={() => (
+                <div>
+                  <h1 style={{ textAlign: "center" }}>
+                    Ooops! You got lost - 404 ☻
+                  </h1>
+                </div>
+              )}
+            />
+          </Switch>
         </div>
       </div>
     );
@@ -60,11 +86,11 @@ let AppContainer = compose(
 
 const MainApp = (props) => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

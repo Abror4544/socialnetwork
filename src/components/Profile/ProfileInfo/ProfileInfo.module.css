@@ -64,6 +64,7 @@ textarea:focus {
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
 }
 
 .info p:not(.title) {
@@ -258,4 +259,15 @@ textarea:focus {
 
 .editProfileBtnCancel {
     margin-left: 20px;
+}
+
+.formSummaryError{
+    background: red;
+    box-shadow: 0 0 5px #d40b0b, 0 0 25px #d40b0b, 0 0 50px #d40b0b, 0 0 200px #d40b0b;
+    color: #ffffff;
+    height: 20px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }

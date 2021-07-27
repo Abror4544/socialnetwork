@@ -2,7 +2,7 @@ import s from './ProfileInfo.module.css';
 import { createField, Input, Textarea } from '../../common/FormsControls/FormsControls';
 import { reduxForm } from 'redux-form';
 
-const ProfileDataForm = ({ handleSubmit, offEditMode}) => {
+const ProfileDataForm = ({ handleSubmit, offEditMode, profile, error }) => {
 
     return <form className={s.info} onSubmit={handleSubmit}>
         <div className={s.infoBlock}>
@@ -12,11 +12,16 @@ const ProfileDataForm = ({ handleSubmit, offEditMode}) => {
             <p>Looking for a job: <span>{createField("", "lookingForAJob", [], Input, "checkbox")}</span></p>
             <p>My professional skills: <span>{createField("Type here mf...", "lookingForAJobDescription", [], Textarea)}</span></p>
         </div>
-        {/* <div>
+        <div>
             <p className={s.title}>Contacts☻</p>{Object.keys(profile.contacts).map(key => {
-                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} />
+                return <div key={key} className={s.contact}>
+                    <p>{key}: {createField(key, "contacts." + key, [], Input)}</p>
+                </div>
             })}
-        </div> */}
+        </div>
+        {error && <div className={s.formSummaryError}>
+            {error}
+        </div>}
         <div>
             <button className={s.editProfileBtn}>
                 <span></span>

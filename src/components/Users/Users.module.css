@@ -75,6 +75,7 @@ h4,p{
     transition: .5s;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: #000000;
 }
 
 .flwBtn button:hover{

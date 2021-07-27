@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { API } from "../api/api";
 
 const ADD_POST = "ADD-POST";
@@ -78,9 +79,17 @@ export const getStatus = (userId) => async (dispatch) => {
 };
 
 export const updateStatus = (status) => async (dispatch) => {
-  let data = await API.updateStatus(status);
-  if (data.resultCode === 0) {
-    dispatch(setStatus(status));
+  try {
+    let data = await API.updateStatus(status);
+    if (data.resultCode === 0) {
+      dispatch(setStatus(status));
+    }
+  } catch (error) {
+    if (error.response.status > 400 && error.response.status < 500) {
+      console.error("Клиентская ошибка");
+    } else {
+      console.error("Ошибка сервера");
+    }
   }
 };
 
@@ -96,6 +105,9 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
   const data = await API.saveProfile(profile);
   if (data.resultCode === 0) {
     dispatch(putUserId(userId));
+  } else {
+    dispatch(stopSubmit("edit-profile", { _error: data.data.messages[0] }));
+    return Promise.reject(data.data.messages[0]);
   }
 };
 
